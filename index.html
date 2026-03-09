@@ -1,29 +1,45 @@
 <!DOCTYPE html>
-<html lang="ar">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>مُبدِع | الرئيسية</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مُبدِع | منصة المبدعين العرب</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
     <div class="container">
-      <h1>مرحباً بك في <span class="brand">مُبدِع</span></h1>
-      <p>المنصة العربية الأولى لعرض إبداعات المطورين والمصممين</p>
+        <header>
+            <h1>مرحباً بك في <span class="brand">مُبدِع</span></h1>
+            <p>اعرض أعمالك، ابنِ هويتك، وتواصل مع المبدعين العرب.</p>
+        </header>
 
-      <div class="selection-cards">
-        <a href="dashboard.html" class="card creator">
-          <div class="icon">🎨</div>
-          <h2>أنا مُبدِع</h2>
-          <p>سجل دخولك وابنِ معرض أعمالك الآن</p>
-        </a>
+        <main class="login-section card">
+            <h2>تسجيل الدخول / إنشاء حساب</h2>
+            
+            <div class="social-grid">
+                <button class="btn-social google" id="btnGoogle">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google">
+                    جوجل
+                </button>
+                <button class="btn-social github" id="btnGithub">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
+                    جيت هاب
+                </button>
+            </div>
 
-        <a href="explore.html" class="card viewer">
-          <div class="icon">👁️</div>
-          <h2>أنا مشاهد</h2>
-          <p>تصفح أعمال المبدعين واكتشف مواهب جديدة</p>
-        </a>
-      </div>
+            <div class="separator">أو عبر البريد السريع</div>
+
+            <form id="passlessForm">
+                <div class="form-group">
+                    <input type="email" id="userEmail" placeholder="أدخل بريدك الإلكتروني" required>
+                </div>
+                <button type="submit" class="btn-main">أرسل رابط الدخول (Passless)</button>
+            </form>
+        </main>
     </div>
-  </body>
+
+    <script type="module" src="app.js"></script>
+</body>
 </html>

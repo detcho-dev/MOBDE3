@@ -1,0 +1,104 @@
+:root {
+    --primary: #a64dff;
+    --secondary: #4d79ff;
+    --bg-dark: #0f0f1a;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text-white: #ffffff;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.brand { color: var(--primary); text-shadow: 0 0 20px rgba(166, 77, 255, 0.5); }
+
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    margin-top: 30px;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* زر مايكروسوفت يأخذ مساحة كاملة تحتهم */
+
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 12px;
+    background: #161625;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.btn-social:hover { transform: translateY(-3px); background: #1f1f35; }
+.btn-social img { width: 18px; }
+
+.separator {
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    color: #777;
+    font-size: 0.8rem;
+}
+
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #333;
+    margin: 0 10px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    background: #0a0a14;
+    color: white;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.btn-main {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(166, 77, 255, 0.3);
+}
+
+.btn-main:hover { opacity: 0.9; }

@@ -21,16 +21,35 @@ import {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+// دالة موحدة للتعامل مع الدخول ومنع الأخطاء
+const handleAuth = async (provider) => {
+    try {
+        await signInWithPopup(auth, provider);
+        window.location.href = "dashboard.html";
+    } catch (error) {
+        // فحص نوع الخطأ
+        if (error.code === 'auth/popup-closed-by-user') {
+            console.log("المستخدم أغلق النافذة قبل تسجيل الدخول.");
+        } else if (error.code === 'auth/cancelled-popup-request') {
+            console.log("تم إلغاء طلب الدخول السابق بسبب طلب جديد.");
+        } else {
+            alert("حدث خطأ: " + error.message);
+        }
+    }
+};
+
 // Google Login
-document.getElementById('btnGoogle').onclick = () => {
+document.getElementById('btnGoogle').onclick = (e) => {
+    e.preventDefault(); // منع الصفحة من التحديث
     const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider).then(() => window.location.href = "dashboard.html");
+    handleAuth(provider);
 };
 
 // GitHub Login
-document.getElementById('btnGithub').onclick = () => {
+document.getElementById('btnGithub').onclick = (e) => {
+    e.preventDefault(); // منع الصفحة من التحديث
     const provider = new GithubAuthProvider();
-    signInWithPopup(auth, provider).then(() => window.location.href = "dashboard.html");
+    handleAuth(provider);
 };
 
 
